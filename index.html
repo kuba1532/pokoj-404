@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Teczka Śledcza · escape roomy</title>
+<meta name="description" content="Escape roomy w telefonie od Teczki Śledczej: Pokój 404, Przedział 7, Ostatni seans. Trzy formaty, trzy poziomy trudności.">
+<meta name="theme-color" content="#15130f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Teczka Śledcza">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="engine/styles.css">
+</head>
+<body>
+
+<!-- HUB: lista gier -->
+<section id="hub" class="screen">
+  <div class="hub-wrap">
+    <div class="hub-head">
+      <div class="eyebrow">Teczka Śledcza</div>
+      <h1>Escape roomy<br>w telefonie</h1>
+      <p class="sub">Jeden telefon, 2–6 graczy. Trzy gry, trzy różne formaty, od 60 do 90 minut. W każdej wybieracie poziom trudności.</p>
+    </div>
+    <div id="hubFlash"></div>
+    <div id="gameList" class="games"></div>
+    <div id="hubKey" class="hub-key"></div>
+    <div class="hub-levels"><div class="eyebrow">Poziomy trudności w każdej grze</div><div id="hubLevels" class="hls"></div></div>
+    <div class="hub-foot">
+      <button class="btn ghost" id="hubInstall" style="display:none">⬇ Zainstaluj na telefonie</button>
+      <p class="fine">Wszystkie osoby i zdarzenia są fikcyjne. Przyda się kartka i ołówek.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPRAWA ZAMKNIĘTA: gra bez klucza (wypełnia engine/loader.js) -->
+<section id="gate" class="screen"></section>
+
+<!-- EKRAN TYTUŁOWY GRY -->
+<section id="title" class="screen">
+  <a class="back" href="./">← Wszystkie gry</a>
+  <div class="title-art" id="titleArt"></div>
+  <div class="title-text">
+    <div class="eyebrow" id="titleEyebrow"></div>
+    <h1 id="titleH1"></h1>
+    <p class="sub" id="titleSub"></p>
+    <div class="title-btns">
+      <button class="btn primary big" id="btnContinue">Kontynuuj</button>
+      <button class="btn ghost big" id="btnNew">Nowa gra</button>
+      <button class="btn ghost" id="btnInstall" style="display:none">⬇ Zainstaluj na telefonie</button>
+    </div>
+    <p class="fine" id="titleFine"></p>
+  </div>
+</section>
+
+<!-- BRIEFING -->
+<section id="brief" class="screen">
+  <div class="paper brief">
+    <div class="docno" id="briefDocno"></div>
+    <h2 id="briefH2"></h2>
+    <p id="briefText"></p>
+    <ul class="rules" id="briefRules"></ul>
+    <div id="levelPick"></div>
+    <button class="btn primary big" id="btnEnter">Wchodzimy</button>
+  </div>
+</section>
+
+<!-- GRA -->
+<main id="app" class="screen">
+  <header id="top">
+    <div id="timerTop"><div id="timer">75:00</div><div id="penalty"></div></div>
+    <div id="sceneName"></div>
+    <div id="tokens"></div>
+  </header>
+  <div id="scene"></div>
+  <nav id="nav"></nav>
+  <div id="toast"></div>
+</main>
+
+<!-- MODAL -->
+<div id="modal" class="modal"><div class="sheet"><button id="modalClose" aria-label="Zamknij">✕</button><div id="modalBody"></div></div></div>
+
+<script src="games/registry.js"></script>
+<script src="engine/loader.js"></script>
+</body>
+</html>
